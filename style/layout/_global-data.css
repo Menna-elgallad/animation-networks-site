@@ -1,0 +1,43 @@
+body {
+  background-color: #EEEEEE;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  display: block;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3EB6AE !important;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.dark-theme {
+  background-color: #16082C;
+}
+
+.dark-theme-text {
+  color: white !important;
+}

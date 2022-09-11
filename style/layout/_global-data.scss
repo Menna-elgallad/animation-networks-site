@@ -1,0 +1,51 @@
+$main-color:#3EB6AE;
+$pt: 50px;
+$shadow:#707070;
+$heading :50px ;
+$headingweigh : 600; 
+
+body{
+    background-color: #FCF8FE;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0; 
+    font-family: 'Poppins', sans-serif;
+}
+p{
+    display: block;
+    margin: 0;
+    
+}
+a{
+    text-decoration: none;
+    
+}
+a:hover{
+    color: $main-color !important;
+    
+}
+ul{
+    display: flex;
+    padding: 0;
+
+}
+li{
+    list-style-type: none;
+}
+.dark-theme{
+    background-color: #16082C;    
+}
+.dark-theme-text{
+    color:white !important;
+
+}
+.dark-theme-light{
+    color:rgba(255, 255, 255, 0.818) !important;
+
+}
+.dark-box{
+    background-color: #2E2242 !important;
+}
+

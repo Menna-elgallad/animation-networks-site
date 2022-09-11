@@ -1,0 +1,96 @@
+@use "../style/layout/_global-data" as * ;
+@use "../style/layout/mixins" as * ;
+
+.blog{
+    position: relative;
+    .gredient{
+        position: absolute;
+        top: 0;
+        right: 50%;
+        @include meduim{
+            left: -50px
+        }
+        @include gredient(#3eb6ae90);
+    
+        &::before{
+            @include gredientBerfore(#3eb6ae90)
+        }   
+    }
+    .gredient1{
+        position: absolute;
+        bottom: 15px;
+        left:30%;
+        @include gredient(#F0EB5B);
+        @include meduim{
+            left: -50px
+        }
+        &::before{
+            @include gredientBerfore(#F0EB5B)
+        }   
+    }
+    .boxes{
+
+        .blog{
+           
+            @for $i from 3 through 9{
+                &:nth-child(#{$i}) {
+                  .img{
+                    background-image: url("../images/blog/#{$i}.png");
+                  }
+                }
+              }
+            &:nth-child(1){
+                background-color: #F0EB5B !important;
+                .img{
+                    background-image:url("../images/blog/1.png") !important;
+                }
+            }
+            &:nth-child(2){
+                &.box{
+                display: flex;
+    
+                gap: 20px;
+                flex-basis: calc((100%) - 35%) !important;
+                @include meduim{
+                    max-width: 100% !important;
+                }
+                .labels{
+                    p{
+                        width: 100%;
+                        padding: 10px;
+                        background-color:#e6e4e7;
+                        margin-top: 20px;
+                        
+                    }
+                }
+                .second{
+                    background-image: url("../images/blog/2\ \(2\).png");
+                    animation: opacity;
+                    animation-duration: 5s;
+                    background-size: cover;
+                    height: 500px;
+                    border-radius: 1.5rem;
+                    width: 100%;
+                    @include meduim{
+                        display: none;
+                    }
+                }
+            }
+    
+                }
+                
+    
+    
+            .img{
+                
+                background-size: cover;
+                height: 250px;
+                border-radius: 1.5rem;
+    
+            }
+        }
+    
+    }
+    
+
+}

@@ -1,0 +1,192 @@
+@use "../style/layout/_global-data" as * ;
+@use "../style/layout/mixins" as * ;
+
+
+.form{
+    max-width: 600px;
+    margin: 50px auto;
+    position: relative;
+    .gredient{
+        position: absolute;
+        left:-100%;
+        top: 50px;
+
+        @include gredient(#3EB6AE);
+    
+        &::before{
+            @include gredientBerfore(#3EB6AE)
+        }   
+    }
+    .gredient1{
+        position: absolute;
+        top:30%;
+        right: -10%;
+        @include meduim{
+            left: -50px
+        }
+        @include gredient(#845ECC);
+    
+        &::before{
+            @include gredientBerfore(#845ECC);
+            right: 0 ; 
+            top: 200px;
+        }   
+    }
+    .gredient2{
+        position: absolute;
+        bottom: 0;
+        left: -10%;
+        @include meduim{
+            left: -50px
+        }
+        @include gredient(#F0EB5B);
+    
+        &::before{
+            @include gredientBerfore(#F0EB5B)
+        }   
+    }
+    .tringles{
+        @include small{
+            display: none;
+        }
+        position: absolute;
+        gap: 10px;
+        left:-150px;
+        top: 50px;
+        .shape{
+            @include triangles($main-color,26px,28px);
+           
+        }
+    }
+    .t-letters{
+        position: absolute;
+                    right: -60%;
+                    top: 45%;
+                    padding: 20px;
+                    height: 220px;
+                    position: absolute;
+                    display: flex;
+                    width: 266px;
+                    flex-wrap: wrap;
+                    gap: 42px;
+                    transform: rotate(90deg);
+           
+                    @include meduim{
+                        display: none
+                    }
+                    .t-letter{
+                        @include tletter(#845ECC);
+
+                        &::before{
+                            @include tletterbefore(top,#845ECC);
+
+                        }
+                    }
+                    .t-letter2{
+                        @include tletter(#845ECC);
+                        width: 2px;
+
+                        &::before{
+                            @include tletterbefore(bottom,#845ECC);
+
+                        }
+                    
+                    
+                  }
+
+    }
+    form{
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        .inputs{
+            position: relative;
+            i{
+                position: absolute;
+                z-index: 100;
+                top: 65%;
+                left:20px;
+                color: rgba(119, 119, 119, 0.511);
+    
+            }
+        }
+        .reasons{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            input{
+                width: 48%;
+
+            }
+        }
+        label{
+            display: block;
+            padding: 10px 5px;
+        }
+        input , select{
+            
+            width: 100%;
+            padding:10px 45px;
+            border-radius: 1.5rem;
+            border: none;
+            outline:none;
+        }
+        .natio{
+            .select{
+                background-color: white;
+                @extend input;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                
+                p{
+                    font-size: 17px;
+                    color: rgb(119, 119, 119);
+                    position: relative;
+                }
+                
+                    img{
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 20px;
+                        position: absolute;
+                        left: -30px;
+                }
+
+            }
+            #list{
+                margin-top: 10px;
+                background-color:#fffefe;
+                border-radius: 1.5rem;
+                display: block;
+                padding: 20px;
+                
+                &.hidden{
+                    display: none;
+                }
+                li{
+                    display: flex;
+                    padding: 10px 10px;
+                    cursor: pointer;
+                    transition: 0.3s ease;
+                    &:hover{
+                        background-color: rgb(158 158 158 / 18%)
+                    }
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+    button{
+       @extend input ;
+       background-color: $main-color;
+       color: white;
+       margin-top: 20px;
+    }
+}

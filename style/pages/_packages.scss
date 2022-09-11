@@ -1,0 +1,324 @@
+@use "../style/layout/_global-data" as * ;
+@use "../style/layout/mixins" as * ;
+
+.packages{
+    position: relative;
+    .gredient{
+        position: absolute;
+        top: 50px;
+        right: 250px;
+        @include meduim{
+            left: -50px
+        }
+        @include gredient(#3eb6ae90);
+    
+        &::before{
+            @include gredientBerfore(#3eb6ae90)
+        }   
+    }
+    .gredient1{
+        position: absolute;
+        top: 69px;
+        left: 145px;
+        @include gredient(#855ecc87);
+        @include meduim{
+            left: -50px
+        }
+        &::before{
+            @include gredientBerfore(#855ecc87)
+        }   
+    }
+    .gredient2{
+        position: absolute;
+        top: 41%;
+        left: 10%;
+        @include gredient(#f0eb5b95);
+        @include meduim{
+            left: -50px
+        }
+        &::before{
+            @include gredientBerfore(#F0EB5B)
+        }   
+    }
+    .gredient3{
+        position: absolute;
+        bottom: -10%;
+        left: 0px;
+        @include gredient(#F0EB5B);
+        @include meduim{
+            left: -50px
+        }
+        &::before{
+            @include gredientBerfore(#F0EB5B)
+        }   
+    }
+    .gredient4{
+        position: absolute;
+        bottom: 13%;
+        right: 27%;
+        @include gredient(#3eb6ae90);
+        @include meduim{
+            left: -50px
+        }
+        &::before{
+            @include gredientBerfore(#3eb6ae90)
+        }   
+    }
+    >.container{
+        display: flex;
+        gap: 30px;
+        @include meduim{
+           flex-direction: column;
+        }
+        .sidebar{
+            .sidemenu{
+                border: none;
+                background-color: transparent;
+                display: none;
+                color: $main-color;
+                font-size: 50px;
+                &:hover{
+                    color: #777;
+                }
+                @include meduim{
+                    display: block;
+                }
+
+            }
+            >ul{
+                @include meduim{
+                   
+
+                    display: none !important;
+                    
+                }
+                &.hide{
+                  
+                    display: block !important;
+                   
+
+                }
+
+                >li{
+
+                    padding: 10px 0 ;
+                    position: relative;
+                    &:not(&:last-child)::after{
+                        content: "";
+                        position: absolute;
+                        bottom: -5px;
+                        width: 100%;
+                        height: 1px;
+                        background-color: rgba(119, 119, 119, 0.39);
+                    }
+                }
+            }
+            .hidden{display: none !important; }
+            ul{
+                display: block ;
+              
+                li{
+                    .reset{
+                        display: inline-block;
+                        padding-top: 40px;
+                        a{
+                            margin-left: 7px;
+                        }
+                    }
+
+                    .head{
+                        i{
+                            cursor: pointer;
+                            &.rotate {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                    label{
+                        padding: 0 10px;
+          
+                    }
+                    input[type="radio"] {
+            
+                        appearance: none;
+                        display: inline-block;
+                        width: 25px;
+                        height: 25px;
+                        padding: 6px;
+                        background-clip: content-box;
+                        border: 2px solid #DDD3E6;
+                        border-radius: 50%;
+                      }
+                      input[type="radio"]:checked {
+                        background-color: #593A89;
+                      }
+                      input[type="checkbox"] {
+                       
+                        transform: scale(1.7);  
+                        margin-left: 9px;
+                                    }
+                      input[type="checkbox"]:checked {
+                        accent-color: #593A89;
+                      }
+                      .pricebut{
+                        gap: 7px;
+                      
+                        .pricerange{
+                            width: 115px;
+                            padding: 7px ;
+                            border-radius: 1.5rem;
+                            border:2px solid  #DDD3E6; 
+                            background-color: transparent;
+                            outline: none;
+                          }
+                          .increment{
+                            border-radius: 50%;
+                            background-color: #593A89;
+                            width: 30px;
+                            height: 30px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: pointer;
+                    
+                            i{
+                                color: white;
+                                font-size: 10px;
+                               
+                            }
+                          }
+                      }
+    
+                      
+                }
+            }
+    }
+    .pactages{
+        position: relative;
+        .compare{
+            
+            position: absolute;
+            right: 4%;
+            top: 29%;
+            background-color: $main-color;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            &:hover{
+                transform: scale(1.2);
+                @include shadow; 
+            }
+            img{
+                width: 50px;
+            }
+            &::after{
+                content: "2";
+                background-color: #F0EB5B;
+                border-radius: 50%;
+                padding: 0px 8px;
+                top: -2px;
+                right: -5px;
+                position: absolute;
+
+
+            }
+        }
+        .container{
+            .header{
+                span{
+                    border-radius: 1.5rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 250px;
+                    border: 1px solid rgba(119, 119, 119, 0.533);
+                    padding: 10px 12px;
+                    i{
+                        padding: 10px;
+                        background-color: white;
+                        border-radius: 50%;
+                        font-size: 10px;
+                    }
+                    
+                }
+                div{
+                    display: flex;
+                    gap: 5px;
+                    div{
+                        width: 40px;
+                        height: 40px;
+                        img{
+                            width: 20px;
+                        }
+                        &:first-child{
+                            background-color: #593A89;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                         
+                        }
+                        &:last-child{
+                
+                            border-radius: 50%;
+                            border: 1px solid rgba(119, 119, 119, 0.39);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                         
+                        }
+                    }
+                }
+            }
+            .content{
+                flex-wrap: wrap;
+                justify-content: space-between;
+                @include mobie{
+                    justify-content: center;
+
+                }
+            }
+            .buttons{
+                font-size: 10px !important;
+                justify-content: space-between;
+                padding-top: 20px;
+                span{
+                    &:first-child{
+                        margin-top: 0 !important;
+                        display: flex;
+                        align-items: center;
+                        a{
+                            color: $main-color !important;
+                        }
+
+                        i{
+                            font-size: 10px;
+                        }
+                    }
+                    &:last-child{
+                        border-radius: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        border: 1px solid $main-color;
+                        a{
+                            color: $main-color !important;
+                        }
+                        padding: 13px 20px;
+                        gap: 5px;
+                        img{
+                            width: 15px;
+                            
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+    }
+}

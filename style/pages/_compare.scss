@@ -1,0 +1,145 @@
+@use "../style/layout/_global-data" as * ;
+@use "../style/layout/mixins" as * ;
+
+
+
+.pactages{
+    .container{
+        .content{
+
+            &.compare{
+                flex-wrap: nowrap !important;
+                
+                justify-content: right !important;
+                gap: 120px;
+                @include meduim{
+                    gap: 10px;
+               
+                }
+                .box{
+                    .head{
+                        @include meduim{
+                            flex-direction: column;
+                            p{
+                                height: 60px;
+                                text-align: center;
+                                margin: 0 !important;
+                            }
+                        }
+                    }
+                    z-index: 100;
+                    &:nth-child(1){
+                        margin-left: 100px;
+                        @include meduim{
+                            margin-left: 0
+                        }
+
+                    }
+                    &:nth-child(2){
+                        margin-right: 100px;
+                        @include meduim{
+                            margin-right: 0;
+                        }
+                    }
+                    max-width: 315px !important;
+                    text-align: center !important;
+                    margin-bottom: -130px;
+                    .arow{
+                        text-align: center;
+                        background-color: $main-color !important;
+                        padding:10px 40px !important; 
+                        a{
+                            color:white !important
+                        }
+                    }
+    
+                }
+            }
+         
+        }
+    }
+}
+.compare{
+    position: relative;
+    .gredient{
+        position: absolute;
+        top: -30%;
+        left: 19%;
+        @include gredient(#3eb6ae90);
+        @include meduim{
+            left: -50px
+        }
+        &::before{
+            @include gredientBerfore(#3eb6ae90)
+        }   
+    }
+    .gredient1{
+        position: absolute;
+        top: 90%;
+        right: 20%;
+        @include gredient(#f0eb5b95);
+        @include meduim{
+            left: -50px
+        }
+        &::before{
+            @include gredientBerfore(#F0EB5B)
+        }   
+    }
+    .container{
+        .content{
+            table{
+                border-radius:1.5rem;
+                border-style: hidden;
+                @include shadow;
+                tr{
+                    &:first-child{
+                        
+                        th{
+                            border-radius: 1.5rem 0  0 0;
+                            padding-top: 100px !important;
+                          
+                        }
+                        td{
+                            padding-top: 100px !important;
+
+                        }
+                    }
+                    &:last-child{
+                        th{
+                            border-radius:  0  0 0 1.5rem;
+                        }
+                        td{
+                            padding-bottom: 50px;
+                        }
+                    }
+                    
+                    th{
+                        
+                        background-color:#dee2e6;
+                        padding: 20px 5%;
+                        font-weight: 500;
+                        color: #593A89;
+                        vertical-align: middle;
+                    }
+                    td{
+                        
+                        padding: 20px 7%;
+                        font-weight: 500;
+                        color: #593A89;
+                        background-color: white;
+                        @include meduim{
+                            text-align: center;
+                        }
+
+                        img{
+                            width: 40px;
+                            padding-right: 20px;
+                        }
+                        
+                    }
+                }
+            }
+           
+    }
+}
+}

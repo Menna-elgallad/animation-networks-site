@@ -1,0 +1,182 @@
+@use "../style/layout/_global-data" as * ;
+@use "../style/layout/mixins" as * ;
+
+
+.sec-one{
+    
+    .container{
+        h2{
+            padding:$pt 0;
+            text-align: center;
+            font-size: 50px;
+       
+        }
+        .content{
+            .img{
+                background-image: url("../images/blog/background.png");
+                background-size: cover;
+                max-width: 100%;
+                height: 500px;
+                border-radius: 1.5rem;
+            }
+            .text{
+                max-width: 70%;
+                margin: 20px auto;
+                p{
+                    padding-top: 20px;
+                    
+                }
+            }
+        }
+    }
+}
+
+
+.Howto{
+    position: relative;
+
+    .gredient{
+        position: absolute;
+        top: -150px;
+        left: 10%;
+        @include meduim{
+            left: -50px
+        }
+        @include gredient(#E55EA2);
+    
+        &::before{
+            @include gredientBerfore(#E55EA2)
+        }   
+    }
+
+    .gredient1{
+        position: absolute;
+        bottom: -50%;
+        left: 145px;
+        @include gredient(#845ECC);
+        @include meduim{
+            left: -50px
+        }
+        &::before{
+            @include gredientBerfore(#845ECC);
+            bottom: -220px;
+            right: 0px;
+        }   
+    }
+    .container{
+        .boxes{
+            padding: 20px;
+            .box{
+                background-color: #FCF8FE !important;
+                flex-basis:calc((100% - 30px) /4)  !important;
+                box-shadow: none !important;
+                padding: 10px !important;
+                border-radius: 1.5rem;
+                &:nth-child(4){
+                    .img{
+                        background-image: url("../images/blog/1.png");
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+.sec-three{
+    position: relative;
+
+    .gredient{
+        position: absolute;
+        bottom: 30%;
+        left: 40%;
+        @include meduim{
+            left: -50px
+        }
+        @include gredient(#F0EB5B);
+    
+        &::before{
+            @include gredientBerfore(#F0EB5B)
+        }   
+    }
+
+    .gredient1{
+        position: absolute;
+        bottom: -90%;
+        left: 50px;
+        @include gredient(#F0EB5B);
+        @include meduim{
+            left: -50px
+        }
+        &::before{
+            @include gredientBerfore(#F0EB5B);
+            bottom: -220px;
+            right: 0px;
+        }   
+    }
+    .container{
+        .text1 , .text2{
+            width: 80%;
+            margin:50px auto;
+        }
+        p{
+            margin-top: 20px;
+        }
+
+        .text2{
+
+            display: flex;
+            gap:20px;
+            @include meduim(){
+                display: block;
+            }
+            .img{
+                background-image: url("../images/blog/fback.png");
+                background-size: cover;
+                width: 100%;
+                border-radius: 1.5rem;
+                @include meduim(){
+                    height: 500px;
+                    margin-top: $pt;
+                }
+            }
+    
+        }
+
+    }
+
+}
+
+.blog{
+    .container
+    {
+        .boxes{
+            margin-top: 20px !important;
+        }
+        .header{
+            flex-wrap: wrap;
+            @include small{
+                justify-content: center !important;
+
+            }
+            >h2{
+                font-size: 30px;
+                font-weight: 500;
+            }
+            a{
+                padding: 20px;
+                transition: 0.3s ease;
+                border-radius :50% ;
+                i{
+                    font-size: 20px;
+                    color: #16082C;
+                }
+                &:hover{
+                    
+                    border: 1px solid black;
+                }
+            }
+        }
+    }
+}

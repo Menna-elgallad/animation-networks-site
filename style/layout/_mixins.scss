@@ -1,0 +1,249 @@
+@mixin abovemobile {
+    @media (min-width:767px)and (max-width:1200px) {
+        @content ; 
+    }
+}
+@mixin mobie  {
+    @media (max-width:992px){
+        @content;
+    }
+}
+@mixin meduim  {
+    @media (max-width:1200px){
+        @content;
+    }
+}
+@mixin shadow {
+    box-shadow: 0px 5px 20px -12px #707070;;
+}
+@mixin  halfcircle($color) {
+
+        width: 70px;
+        height: 80px;
+        border-radius: 50%;
+        border: 20px solid transparent ;
+        border-right-color:$color ;
+        transform: rotate(-45deg);
+    }
+
+    @mixin triangles($color ,$height , $border) {
+        height: $height;
+        border-radius: 50%;
+        border: $border solid transparent;
+        border-top-color:$color ;
+        
+    }
+
+    @mixin opacity2($name) {
+        @keyframes #{$name} {
+            0%{opacity: 0;}
+            50%{opacity: 90%;}
+            100%{opacity: 0;}
+
+        }
+        
+    }
+    @mixin gredient($color) {
+        @include opacity2(g_opacity);
+        animation-name: g_opacity;
+        animation-duration: 4s;
+        animation-timing-function:linear;
+        animation-iteration-count: infinite;
+        z-index: -50;
+        background-image: linear-gradient(180deg, $color);
+        width: 90px;
+        height: 90px;
+        filter: blur(60px);
+    }
+    @mixin gredientBerfore($color) {
+        @include gredient($color);
+        content: "";
+        position:absolute ; 
+        bottom: -230px;
+        right: -180px;
+    }    
+@mixin tletter($color) {
+    position: relative;
+    width: 3px;
+    height: 20px;
+    background-color:$color;
+    
+}
+@mixin circles($color ,$size) {
+
+        width: $size;
+        height: $size;
+        background-color: $color;
+        border-radius: 50%;
+
+}
+
+@mixin tletterbefore($position, $color) {
+    content:"";
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    #{$position}:-3px;
+    right: -8px;
+    background-color: $color;
+    
+}
+@mixin spanbutton($color) {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: $color;
+    border-radius: 1.5rem;
+    a{
+        color: white;
+    }
+    font-weight: bold;
+    text-align: center;
+}
+@mixin spanborder {
+    padding: 13px 35px;
+    border: 1px solid black;
+    border-radius: 1.5rem;
+    display: inline-block;
+    margin-top: 50px;
+    a{
+        color: #16082C;
+    }
+}
+@mixin  overlay($color) {
+    content: "";
+    position: absolute;
+    background-color:$color;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    top:0;
+    left:0;
+    
+}
+
+@mixin tringle {
+    border: 20px solid transparent;
+    margin-right: -11px;
+    width: 0px;
+    height: 0px;
+    border-bottom-color: #F0EB5B;
+    transform: rotate(-45deg);
+    
+}
+@mixin  small {
+    @media (max-width:769px){
+        @content;
+    }
+}
+@mixin colorborder($name) {
+    @keyframes #{$name} {
+        0%  {transform: rotate(-45deg);}
+        60%  {transform: rotate(325deg);}
+      }
+}
+
+@mixin tringleanimation($name) {
+    @keyframes #{$name} {
+        0% {transform: rotate(0deg);}
+        25% {transform: rotate(45deg);}
+        50% {transform: rotate(-45deg);}
+        100% {transform: rotate(0deg);}
+      }
+}
+@mixin opacity($name) {
+    @keyframes #{$name} {
+       from {opacity: 0;}
+       to {opacity: 1;}
+      }
+}
+@mixin scale($name){
+    @keyframes #{$name} {
+        25%{transform: scale(0.8);}
+        50% {transform: scale(1);}
+        75% {transform: scale(1.2);}
+        100% {transform: scale(1);}
+        
+    }
+}
+@mixin colorrunnig($name ,$color){
+    @keyframes #{$name} {
+        25%{border-top-color:$color ;}
+        50% {border-right-color:$color ;}
+        75% {border-bottom-color:$color ;}
+        100% {border-left-color:$color ;}
+        
+    }
+}
+@mixin shadowrunnig($name ,$color){
+    @keyframes #{$name} {
+        0%{box-shadow: 0px 4px 20px 8px $color;}
+        50% {box-shadow:0px 4px 20px -5px $color; }
+        100% {box-shadow: 0px 4px 20px 8px $color; }
+        
+    }
+}
+
+@mixin float($name){
+    @keyframes #{$name} {
+        0% {
+       
+          transform: translatey(0px) translatex(0px);
+         
+          
+        }
+        50% {
+         
+          transform: translatey(-50px) translatex(-50px) scale(0.5);
+         
+        }
+        100% {
+        
+          transform: translatey(0px) translatex(0px) scale(1);
+    
+        }
+      }
+}
+
+@mixin  translate ($name , $number) {
+    @keyframes #{$name} {
+        0% {
+       
+            transform: translatex(0px);
+           
+            
+          }
+          50% {
+           
+            transform:  translatex( $number) ;
+           
+          }
+          100% {
+          
+            transform: translatex(0px) ;
+      
+          }
+    }
+    
+}
+@mixin  translate2 ($name , $number) {
+    @keyframes #{$name} {
+        0% {
+       
+            transform: translatex(0px);
+           
+            
+          }
+          50% {
+           
+            transform:  translatex( $number) ;
+           
+          }
+          100% {
+          
+            transform: translatex(0px) ;
+      
+          }
+    }
+    
+}
